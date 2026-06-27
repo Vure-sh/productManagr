@@ -1,0 +1,112 @@
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#div {
+    border: 1px solid #334155; 
+    background-color: #1e293b;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    max-width: 320px;
+    width: 100%;
+}
+
+#msg {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #4ade80; /* NOTE : Change to #f87171 if it's an error msg */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    color: #38bdf8;
+}
+
+.ProductInput {
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+
+.ProductInput:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+
+#Pquan {
+    margin-bottom: 20px;
+}
+
+#btnSave {
+    width: 100%;
+    padding: 12px;
+    background-color: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+#btnSave:hover {
+    background-color: #7dd3fc;
+}
+
+#kl {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #94a3b8;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 5px;
+}
+
+#Products {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+#Products li {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
