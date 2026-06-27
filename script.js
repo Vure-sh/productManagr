@@ -6,6 +6,7 @@ const productName = document.getElementById("Pname")
 const productPrice = document.getElementById("Pprice")
 const productQuan = document.getElementById("Pquan")
 const msg = document.getElementById("msg")
+const productCount = document.getElementById("kl")
 
 /*************************************************************/
 
@@ -43,6 +44,7 @@ function displayProduct(){
 </div>`
                 ;
     })
+    productCount.textContent = `Products (${Products.length}) :`
 };
 
 
