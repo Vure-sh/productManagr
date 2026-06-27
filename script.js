@@ -15,8 +15,8 @@ const productCount = document.getElementById("kl")
 
 let editIndex = null;
 //Parsing values from local storage
-let Products = [];
-Products = JSON.parse(localStorage.getItem("Products"));
+let Products = JSON.parse(localStorage.getItem("Products")) || []; //if the program is running for the first time, it doesnt work as it cannot rad the value of null,
+//so if there is no data, the variable "Products" is assigned a value of an empty array
 
 //functions to be reused later
 function saveProduct(product) {
