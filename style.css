@@ -110,3 +110,63 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
+.items {
+    background: #1f2937;
+    color: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: .2s ease;
+}
+
+.items:hover {
+    transform: translateY(-3px);
+}
+
+.product-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+}
+
+.product-info p {
+    margin: 6px 0;
+    color: #d1d5db;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.edit-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #2563eb;
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}

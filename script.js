@@ -9,6 +9,7 @@ const msg = document.getElementById("msg")
 
 /*************************************************************/
 
+let editIndex = null;
 //Parsing values from local storage
 let Products = [];
 Products = JSON.parse(localStorage.getItem("Products"));
@@ -16,6 +17,7 @@ Products = JSON.parse(localStorage.getItem("Products"));
 //functions to be reused later
 function saveProduct(product) {
     Products.push(product);
+
 
     localStorage.setItem("Products", JSON.stringify(Products));
 
@@ -27,21 +29,35 @@ function saveProduct(product) {
 function displayProduct(){
     productList.innerHTML = ""; //resetting the list
     Products.forEach(function(P , index){
-          productList.innerHTML += `
-                    <div class="items">
-                        <h3>${P.name}</h3>
-                        <p>Price: ${P.price}</p>
-                        <p>Quantity: ${P.Quan}</p>
-                        <button onclick="removeProduct(${index})">delete</button>
-                    </div>`
+          productList.innerHTML += `<div class="items">
+    <div class="product-info">
+        <h3>${P.name}</h3>
+        <p>Price: ${P.price}$</p>
+        <p>Quantity: ${P.Quan}</p>
+
+        <div class="actions">
+            <button class="edit-btn" onclick="editProduct(${index})">Edit</button>
+            <button class="delete-btn" onclick="removeProduct(${index})">Delete</button>
+        </div>
+    </div>
+</div>`
                 ;
     })
 };
+
+
 
 function removeProduct(index){
     Products.splice(index, 1)
     localStorage.setItem("Products", JSON.stringify(Products))
     displayProduct()
+}
+
+function editProduct(index){
+    editIndex = index;
+    productQuan.value = Products[index].Quan
+    productPrice.value = Products[index].price
+    productName.value = Products[index].name
 }
 
 btnSave.addEventListener("click", function(){
@@ -50,7 +66,18 @@ btnSave.addEventListener("click", function(){
         price : Number(productPrice.value),
         Quan : Number(productQuan.value)
     };
-    saveProduct(product)
+
+     if (editIndex == null) {
+        Products.push(product);
+    } else {
+        Products[editIndex] = product;
+        editIndex = null;
+    }
+    productQuan.value = "";
+    productPrice.value = "";
+    productName.value = "";
+
+    
     displayProduct();
 });
 
