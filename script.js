@@ -1,3 +1,6 @@
+//Project added to github !
+//https://github.com/Vure-sh/productManagr
+
 //DOM elements//
 
 const btnSave = document.getElementById("btnSave")
